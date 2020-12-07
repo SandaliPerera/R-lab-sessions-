@@ -1,0 +1,23 @@
+#Index_No: 18020569
+Class<-read.csv(file.choose())
+nrow(Class)
+Class
+fix(Class)
+help(barplot)
+GenderColumn<-table(Class$Gender)
+barplot(GenderColumn)
+EthnicityColumn<-table(Class$Ethnicity)
+barplot(EthnicityColumn)
+DegreeColumn<-table(Class$DegreeType)
+barplot(DegreeColumn)
+ClassColumn<-table(Class$Class)
+barplot(ClassColumn)
+classGender<- table(Class$Class,Class$Gender)
+classGender
+prop.table(classGender)
+classDisSin<-table(Class$Class[Class$Ethnicity == "Sinhala"])
+barplot(classDisSin)
+classDegree<-table(Class$DegreeType,Class$Class)
+barplot(classDegree,legend.text = c("General Degree","Special Degree"))
+classDegree<-table(Class$Gender,Class$Class)
+barplot(classDegree,legend.text = c("Female","Male"))
